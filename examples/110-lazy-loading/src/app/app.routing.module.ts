@@ -14,6 +14,11 @@ const routes: Routes = [
     path: 'products',
     loadChildren: () => import('./products/products.module')
       .then(mod => mod.ProductsModule)
+  },  
+  {
+    path: 'snelstart',
+    loadChildren: () => import('./snelstart/snelstart.module')
+      .then(mod => mod.SnelstartModule)
   },
   // Old notation (Angular 4-7)
   //   {path: 'customers', loadChildren: './customer/customer.module#CustomerModule'},
