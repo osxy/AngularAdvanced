@@ -7,6 +7,7 @@ import {ProductsModule} from './products/products.module';
 
 // components
 import {AppComponent} from './app.component';
+import { SnelStartModule } from './snel-start/snel-start.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import {AppComponent} from './app.component';
   imports: [
     BrowserModule,
     CustomerModule,
-    ProductsModule
+    ProductsModule,
+    SnelStartModule
   ],
   bootstrap: [AppComponent]
 })
