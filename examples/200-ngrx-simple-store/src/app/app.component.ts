@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {Store, select} from '@ngrx/store';
 
 // Import all possible actions
-import {increment, decrement, reset} from './store/counter.actions';
+import {reset, changeValue} from './store/counter.actions';
 
 @Component({
   selector: 'app-root',
@@ -27,12 +27,16 @@ export class AppComponent implements OnInit {
   }
 
   // dispatch actions for the store. They are imported above
-  increment() {
-    this.store.dispatch(increment());
+  increment(amount : number) {
+    if(amount){
+      this.store.dispatch(changeValue(amount));
+    } else {
+      this.store.dispatch(changeValue(1));
+    }
   }
 
   decrement() {
-    this.store.dispatch(decrement());
+    this.store.dispatch(changeValue(-1));
   }
 
   reset() {

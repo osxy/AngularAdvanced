@@ -1,6 +1,6 @@
 // Import store stuf and available actions
 import {Action, createReducer, on} from '@ngrx/store';
-import {decrement, increment, reset} from './counter.actions';
+import {changeValue, reset} from './counter.actions';
 
 // Initial state: counter=0
 export const initialState = 0;
@@ -8,8 +8,7 @@ export const initialState = 0;
 // Internal variable/function with reducers. It receives a state from
 // the actual (exported) counterReducer below
 const reducer = createReducer(initialState,
-  on(increment, state => state + 1),
-  on(decrement, state => state - 1),
+  on(changeValue, (state, {payload}) => state + payload),
   on(reset, state => 0)
 );
 
